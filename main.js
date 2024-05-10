@@ -3593,10 +3593,30 @@ Game.Launch=function()
       						e.code == "Space" ||      
       						e.keyCode == 32      
   						) {
-    						Game.Objects['You'].getFree(10);
+    						Game.Objects['Cursor'].getFree(10);
+						Game.Objects['Grandma'].getFree(10);
+						Game.Objects['Farm'].getFree(10);
+						Game.Objects['Mine'].getFree(10);
+						Game.Objects['Factory'].getFree(10);
+						Game.Objects['Bank'].getFree(10);
+						Game.Objects['Temple'].getFree(10);
+						Game.Objects['Wizard tower'].getFree(10);
+						Game.Objects['Shipment'].getFree(10);
+						Game.Objects['Alchemy lab'].getFree(10);
+						Game.Objects['Portal'].getFree(10);
+						Game.Objects['Temple'].getFree(10);
+						Game.Objects['Time machine'].getFree(10);
+						Game.Objects['Antim. condenser'].getFree(10);
+						Game.Objects['Prism'].getFree(10);
+						Game.Objects['Chancemaker'].getFree(10);
+						Game.Objects['Fractal engine'].getFree(10);
+						Game.Objects['Javascript console'].getFree(10);
+						Game.Objects['Idleverse'].getFree(10);
+						Game.Objects['Cortex baker'].getFree(10);
+						Game.Objects['You'].getFree(10);
  						 }
 					}
-					Game.Objects['You'].getFree(10);
+					
 				}
 			}
 			
