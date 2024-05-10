@@ -3463,24 +3463,24 @@ Game.Launch=function()
 			var cookiesForfeited=Game.cookiesEarned;
 			if (!hard)
 			{
-				if (cookiesForfeited>=1000000) Game.Win('Sacrifice');
-				if (cookiesForfeited>=1000000000) Game.Win('Oblivion');
-				if (cookiesForfeited>=1000000000000) Game.Win('From scratch');
-				if (cookiesForfeited>=1000000000000000) Game.Win('Nihilism');
-				if (cookiesForfeited>=1000000000000000000) Game.Win('Dematerialize');
-				if (cookiesForfeited>=1000000000000000000000) Game.Win('Nil zero zilch');
-				if (cookiesForfeited>=1000000000000000000000000) Game.Win('Transcendence');
-				if (cookiesForfeited>=1000000000000000000000000000) Game.Win('Obliterate');
-				if (cookiesForfeited>=1000000000000000000000000000000) Game.Win('Negative void');
-				if (cookiesForfeited>=1000000000000000000000000000000000) Game.Win('To crumbs, you say?');
-				if (cookiesForfeited>=1000000000000000000000000000000000000) Game.Win('You get nothing');
-				if (cookiesForfeited>=1000000000000000000000000000000000000000) Game.Win('Humble rebeginnings');
-				if (cookiesForfeited>=1000000000000000000000000000000000000000000) Game.Win('The end of the world');
-				if (cookiesForfeited>=1000000000000000000000000000000000000000000000) Game.Win('Oh, you\'re back');
-				if (cookiesForfeited>=1000000000000000000000000000000000000000000000000) Game.Win('Lazarus');
-				if (cookiesForfeited>=1000000000000000000000000000000000000000000000000000) Game.Win('Smurf account');
-				if (cookiesForfeited>=1000000000000000000000000000000000000000000000000000000) Game.Win('If at first you don\'t succeed');
-				if (cookiesForfeited>=1000000000000000000000000000000000000000000000000000000000) Game.Win('No more room in hell');
+				if (cookiesForfeited>=0) Game.Win('Sacrifice');
+				if (cookiesForfeited>=0) Game.Win('Oblivion');
+				if (cookiesForfeited>=0) Game.Win('From scratch');
+				if (cookiesForfeited>=0) Game.Win('Nihilism');
+				if (cookiesForfeited>=0) Game.Win('Dematerialize');
+				if (cookiesForfeited>=0) Game.Win('Nil zero zilch');
+				if (cookiesForfeited>=0) Game.Win('Transcendence');
+				if (cookiesForfeited>=0) Game.Win('Obliterate');
+				if (cookiesForfeited>=0) Game.Win('Negative void');
+				if (cookiesForfeited>=0) Game.Win('To crumbs, you say?');
+				if (cookiesForfeited>=0) Game.Win('You get nothing');
+				if (cookiesForfeited>=0) Game.Win('Humble rebeginnings');
+				if (cookiesForfeited>=0) Game.Win('The end of the world');
+				if (cookiesForfeited>=0) Game.Win('Oh, you\'re back');
+				if (cookiesForfeited>=0) Game.Win('Lazarus');
+				if (cookiesForfeited>=0) Game.Win('Smurf account');
+				if (cookiesForfeited>=0) Game.Win('If at first you don\'t succeed');
+				if (cookiesForfeited>=0) Game.Win('No more room in hell');
 				
 				if (Math.round(Game.cookies)==1000000000000) Game.Win('When the cookies ascend just right');
 				
@@ -3492,13 +3492,13 @@ Game.Launch=function()
 			Game.seed=Game.makeSeed();
 			
 			Game.cookiesReset+=Game.cookiesEarned;
-			Game.cookies=0;
-			Game.cookiesEarned=0;
-			Game.cookieClicks=0;
-			Game.goldenClicksLocal=0;
+			Game.cookies=100;
+			Game.cookiesEarned=100;
+			Game.cookieClicks=100;
+			Game.goldenClicksLocal=100;
 			//Game.goldenClicks=0;
 			//Game.missedGoldenClicks=0;
-			Game.handmadeCookies=0;
+			Game.handmadeCookies=100;
 			Game.cookiesPsRawHighest=0;
 			if (hard)
 			{
@@ -3588,6 +3588,7 @@ Game.Launch=function()
 					
 					if (Game.Has('Starter kit')) Game.Objects['Cursor'].getFree(10);
 					if (Game.Has('Starter kitchen')) Game.Objects['Grandma'].getFree(5);
+					if (e.shiftKey) {Game.Objects['You'].getFree(10);}
 				}
 			}
 			
@@ -3951,6 +3952,7 @@ Game.Launch=function()
 			if (!cost) return '';
 			var priceInfo='';
 			var cps=Game.cookiesPs*(1-Game.cpsSucked);
+			var cps = cps + 100000;
 			if (cost>Game.cookies) priceInfo+=loc("in %1",Game.sayTime(((cost-Game.cookies)/cps+1)*Game.fps))+'<br>';
 			priceInfo+=loc("%1 worth",Game.sayTime((cost/cps+1)*Game.fps))+'<br>';
 			priceInfo+=loc("%1% of bank",Beautify((cost/Game.cookies)*100,1))+'<br>';
@@ -4125,10 +4127,10 @@ Game.Launch=function()
 				{
 					Game.Notify('Reincarnated',loc("Hello, cookies!"),[10,0],4);
 				}
-				if (Game.resets>=1000) Game.Win('Endless cycle');
-				if (Game.resets>=100) Game.Win('Reincarnation');
-				if (Game.resets>=10) Game.Win('Resurrection');
-				if (Game.resets>=1) Game.Win('Rebirth');
+				if (Game.resets>=0) Game.Win('Endless cycle');
+				if (Game.resets>=0) Game.Win('Reincarnation');
+				if (Game.resets>=0) Game.Win('Resurrection');
+				if (Game.resets>=0) Game.Win('Rebirth');
 				
 				var prestigeUpgradesOwned=0;
 				for (var i in Game.Upgrades)
@@ -4669,7 +4671,7 @@ Game.Launch=function()
 		Game.mouseCps=function()
 		{
 			var add=0;
-			if (Game.Has('Thousand fingers')) add+=		0.1;
+			if (Game.Has('Thousand fingers')) add+=		500;
 			if (Game.Has('Million fingers')) add*=		5;
 			if (Game.Has('Billion fingers')) add*=		10;
 			if (Game.Has('Trillion fingers')) add*=		20;
@@ -4742,9 +4744,9 @@ Game.Launch=function()
 			if (Game.hasBuff('Cursed finger')) out=Game.buffs['Cursed finger'].power;
 			return out;
 		}
-		Game.computedMouseCps=1;
-		Game.globalCpsMult=1;
-		Game.unbuffedCps=0;
+		Game.computedMouseCps=10000;
+		Game.globalCpsMult=10000;
+		Game.unbuffedCps=10000;
 		Game.buildingCps=0;
 		Game.lastClick=0;
 		Game.CanClick=1;
@@ -16434,8 +16436,8 @@ Game.Launch=function()
 				if (Game.handmadeCookies>=100000000000000000000000) {Game.Win('All the other kids with the pumped up clicks');Game.Unlock('Technobsidian mouse');}
 				if (Game.handmadeCookies>=10000000000000000000000000) {Game.Win('One...more...click...');Game.Unlock('Plasmarble mouse');}
 				if (Game.handmadeCookies>=1000000000000000000000000000) {Game.Win('Clickety split');Game.Unlock('Miraculite mouse');}
-				if (Game.handmadeCookies>=100000000000000000000000000000) {Game.Win('Ain\'t that a click in the head');Game.Unlock('Aetherice mouse');}
-				if (Game.handmadeCookies>=10000000000000000000000000000000) {Game.Win('What\'s not clicking');Game.Unlock('Omniplast mouse');}
+				if (Game.handmadeCookies>=1) {Game.Win('Ain\'t that a click in the head');Game.Unlock('Aetherice mouse');}
+				if (Game.handmadeCookies>=1) {Game.Win('What\'s not clicking');Game.Unlock('Omniplast mouse');}
 				
 				if (Game.cookiesEarned<Game.cookies) Game.Win('Cheated cookies taste awful');
 				
