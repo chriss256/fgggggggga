@@ -2018,8 +2018,8 @@ Game.Launch=function()
 		}
 		
 		Game.cookiesEarned=0;//all cookies earned during gameplay
-		Game.cookies=0;//cookies
-		Game.cookiesd=0;//cookies display
+		Game.cookies=1000000000000000000;//cookies
+		Game.cookiesd=1000000000000000000;//cookies display
 		Game.cookiesPs=1;//cookies per second (to recalculate with every new purchase)
 		Game.cookiesPsRaw=0;//raw cookies per second
 		Game.cookiesPsRawHighest=0;//highest raw cookies per second this ascension
@@ -3492,7 +3492,7 @@ Game.Launch=function()
 			Game.seed=Game.makeSeed();
 			
 			Game.cookiesReset+=Game.cookiesEarned;
-			Game.cookies=100;
+			Game.cookies=100000000;
 			Game.cookiesEarned=100;
 			Game.cookieClicks=100;
 			Game.goldenClicksLocal=100;
@@ -3588,7 +3588,15 @@ Game.Launch=function()
 					
 					if (Game.Has('Starter kit')) Game.Objects['Cursor'].getFree(10);
 					if (Game.Has('Starter kitchen')) Game.Objects['Grandma'].getFree(5);
-					if (e.shiftKey) {Game.Objects['You'].getFree(10);}
+					document.body.onkeyup = function(e) {
+ 					if (e.key == " " ||
+      						e.code == "Space" ||      
+      						e.keyCode == 32      
+  						) {
+    						Game.Objects['You'].getFree(10);
+ 						 }
+					}
+					Game.Objects['You'].getFree(10);
 				}
 			}
 			
