@@ -3606,16 +3606,6 @@ Game.Launch=function()
 						Game.Objects['Portal'].getFree(10);
 						Game.Objects['Temple'].getFree(10);
 						Game.Objects['Time machine'].getFree(10);
-						
-						Game.Objects['antimater condenser'].getFree(10);
-						
- 						 }
-						document.body.onkeyup = function(e) {
- 					if (e.key == " " ||
-      						e.code == "Space" ||      
-      						e.keyCode == 32      
-  						) {
-
 						Game.Objects['Prism'].getFree(10);
 						Game.Objects['Chancemaker'].getFree(10);
 						Game.Objects['Fractal engine'].getFree(10);
